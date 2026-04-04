@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "lead-gen-toolkit": {
+      "command": "c:\\Users\\soura\\.vscode\\bizness\\.venv\\Scripts\\python.exe",
+      "args": ["c:\\Users\\soura\\.vscode\\bizness\\server.py"]
+    }
+  }
+}

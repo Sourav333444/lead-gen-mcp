@@ -1,0 +1,24 @@
+# Environment variables
+.env
+
+# Google OAuth (never commit)
+credentials.json
+token.json
+
+# Temp/intermediate files
+.tmp/
+
+# Node
+node_modules/
+
+# Python
+.venv/
+__pycache__/
+*.pyc
+
+# Logs
+*.log
+
+# OS junk
+.DS_Store
+Thumbs.db
