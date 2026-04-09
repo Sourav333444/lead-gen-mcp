@@ -1,5 +1,7 @@
 # Lead Gen MCP Server
 
+[![MCPize](https://mcpize.com/badge/@Sourav333444/lead-gen?type=tools&style=plastic)](https://mcpize.com/mcp/lead-gen)
+
 A free MCP server that runs a full B2B outbound pipeline inside a Claude conversation.
 
 Type one sentence. Get scraped leads → Google Sheet → Instantly campaign, all without leaving your chat.
