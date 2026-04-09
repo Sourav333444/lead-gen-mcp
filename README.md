@@ -1,20 +1,27 @@
 # Lead Gen MCP Server
 
-An MCP server that gives Claude a complete B2B lead generation toolkit — scrape Google Maps, read Google Sheets, and push leads into Instantly email campaigns, all from a single conversation.
+A free MCP server that runs a full B2B outbound pipeline inside a Claude conversation.
+
+Type one sentence. Get scraped leads → Google Sheet → Instantly campaign, all without leaving your chat.
+
+```
+You:    Scrape 30 HVAC companies in Austin TX, create a campaign called
+        "HVAC Austin | Free Audit", and push the leads.
+
+Claude: Done.
+        → 28 qualified leads saved: https://docs.google.com/spreadsheets/d/...
+        → Campaign created (ID: a1b2c3)
+        → 28 leads uploaded. Ready to launch in Instantly.
+```
 
 ## What it does
 
 | Tool | Description |
 |---|---|
-| `scrape_leads` | Scrape Google Maps for qualified businesses → saves to Google Sheet |
-| `read_sheet` | Read rows from any Google Sheet as structured data |
-| `create_instantly_campaign` | Create a new Instantly email campaign |
-| `push_to_instantly` | Upload leads into an Instantly campaign |
-
-**Example workflow in Claude:**
-> "Scrape 50 HVAC companies in Austin, create an Instantly campaign called 'HVAC Austin — Free Audit', and push the leads."
-
-Claude does all four steps in one shot.
+| `scrape_leads` | Google Maps → qualified leads → Google Sheet (via Apify) |
+| `read_sheet` | Load leads from any existing Google Sheet |
+| `create_instantly_campaign` | Create a new Instantly email campaign, returns campaign ID |
+| `push_to_instantly` | Upload leads array to an Instantly campaign |
 
 ## Prerequisites
 
@@ -26,7 +33,7 @@ Claude does all four steps in one shot.
 ## Install
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/lead-gen-mcp
+git clone https://github.com/Sourav333444/lead-gen-mcp
 cd lead-gen-mcp
 
 python -m venv .venv
@@ -38,11 +45,7 @@ pip install "mcp[cli]" apify-client gspread google-auth google-auth-oauthlib req
 
 ## Configure
 
-Copy `.env.example` to `.env` and fill in your keys:
-
-```bash
-cp .env.example .env
-```
+Create a `.env` file in the project root:
 
 ```env
 APIFY_API_TOKEN=apify_api_...
